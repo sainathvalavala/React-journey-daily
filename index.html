@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <h1 style="color: red">this is a h1 element</h1>
+    <!--Declarative syntax-->
+    <div id="h1"></div>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <script type="text/babel">
+      //creating a h1 DOM element
+      let newh1 = document.createElement("h1");
+      newh1.innerText = "this ia a H1 element created by DOM";
+      newh1.style.color = "green";
+      document.getElementById("h1").appendChild(newh1);
+
+      // creating React Element
+      var rh1 = React.createElement(
+        "h1",
+        { style: { color: "blue" } },
+        "this is a H1 created by React element"
+      );
+      ReactDOM.render(rh1, document.getElementById("d1"));
+
+      //creating a React Element using JSX.
+      var jsxh1 = (
+        <h1 style={{color:'royalblue'}}>this is a h1 element created by react using JSX syntax</h1>
+      );
+      ReactDOM.render(jsxh1, document.getElementById("d2"));
+
+      console.dir(newh1);
+      console.dir(rh1);
+      console.dir(jsxh1);
+    </script>
+  </body>
 </html>
