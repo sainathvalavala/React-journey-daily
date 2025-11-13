@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="d3"></div>
+    <div id="d4"></div>
+
+    <script type="text/babel">
+      var a = 123;
+      var b = 998;
+      var c = +prompt();
+      var jh1 = <h1>{a > b ? a : b}</h1>;
+      var l1 = <h2>{c % 2 == 0 ? "even" : "odd"}</h2>;
+      // ReactDOM.render(jh1, document.getElementById("d3"));
+      ReactDOM.render(l1, document.getElementById("d4"));
+    </script>
+  </body>
+</html>
+22
+11
