@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="./food.js"></script>
+    <style>
+      .vegPizza {
+        background-color: green;
+        color: white;
+      }
+      .nonVegPizza {
+        background-color: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d3"></div>
+    <script type="text/babel">
+      console.log(food);
+      var { pizzas } = food;
+      console.log(pizzas);
+      let pizzaTable = (
+        <table border="2px">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Pizza Name</th>
+              <th>Category</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pizzas.map((pizza) => {
+              return (
+                <tr
+                  class={pizza.category == "veg" ? "vegPizza" : "nonVegPizza"}
+                >
+                  <td>{pizza.id}</td>
+                  <td>{pizza.name}</td>
+                  <td>{pizza.category}</td>
+                  <td>{JSON.stringify(pizza.price)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      );
+      ReactDOM.render(pizzaTable, document.getElementById("d3"));
+    </script>
+  </body>
+</html>
