@@ -15,22 +15,18 @@
     <div id="d1"></div>
     <script type="text/babel">
       var Jkl = function () {
-        // var [x, setX] = React.useState([1, 2, 3, 4, 5]);
-        var [x, setX] = React.useState("Shelby");
-        // var [y, setY] = React.useState(20);
+        let [num, setNum] = React.useState([1, 2, 3, 4, 5, 6]);
         return (
-          <div>
-            <h1>
-              {/*{x.map((k) => {
-                return(
-                <h2>{k}</h2>)
-              })}*/}
-              {x.length}<br/>
-              {x.toUpperCase()}
-              {/*x[0]
-              {x[1]*/}
-            </h1>
-          </div>
+          <>
+            <div>
+              {/*num.map((x) => {
+                return x % 2 == 0 ? <i>{x}</i> : <b>{x}</b>;
+              })*/}
+              {num.reduce((x, y) => {
+                return x + y;
+              })}
+            </div>
+          </>
         );
       };
       ReactDOM.render(<Jkl></Jkl>, document.getElementById("d1"));
