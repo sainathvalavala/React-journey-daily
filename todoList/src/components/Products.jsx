@@ -118,7 +118,6 @@ function Products() {
           // console.log(x);
           return (
             <div>
-              
               <div
                 style={{
                   display: "flex",
