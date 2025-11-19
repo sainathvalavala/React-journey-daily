@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Counter() {
   let [count, setCount] = useState(0);
+
+
   function inc() {
-    setCount(count + 1);
+    console.log('count inc')
+    setCount(count +1);
   }
-  function dec() {
-    setCount(count - 1);
-  }
+  // function dec() {
+  //   setCount(count - 1);
+  // }
+  useEffect(()=>{
+    console.log('count')
+    setInterval(inc,1000)
+  },[])
+  
   return (
     <>
-      <div className="text-3xl font-bold">counter:{count}</div>
-      <button onClick={inc}>increment</button>
-      <button onClick={dec}>defaultcrement</button>
+      <div style={{fontSize:"50px"}}>counter:{count}</div>
+      {/* <button onClick={inc}>increment</button>
+      <button onClick={dec}>decrement</button> */}
     </>
   );
 }

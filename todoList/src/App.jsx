@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Counter from "./components/counter";
-import TodoList from "./components/TodoList";
+
+
+import Products from "./components/products";
 
 function App() {
   return (
@@ -9,7 +9,8 @@ function App() {
       {/* <Navbar></Navbar> */}
       {/* <Counter></Counter> */}
       {/* <div>App</div> */}
-      <TodoList></TodoList>
+      {/* <TodoList></TodoList> */}
+      <Products></Products>
     </>
   );
 }
