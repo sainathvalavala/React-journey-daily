@@ -7,7 +7,7 @@ function Cart({ cartItems }) {
     <div style={{ marginLeft: "20px" }}>
       <h2>Cart Items</h2>
 
-      <table border="1">
+      <table border="2px" cellPadding="5px">
         <thead>
           <tr>
             <th>Title</th>
